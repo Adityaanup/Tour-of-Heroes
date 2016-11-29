@@ -10,7 +10,7 @@ import { Hero } from './hero';
   moduleId: module.id,
   selector: 'my-hero-detail',
   templateUrl: 'hero-detail.component.html',
-  styleUrls:['hero-detail.component.css']
+  styleUrls: ['hero-detail.component.css']
 })
 export class HeroDetailComponent implements OnInit {
   @Input()
@@ -26,6 +26,11 @@ export class HeroDetailComponent implements OnInit {
     this.route.params
       .switchMap((params: Params) => this.heroService.getHero(+params['id']))
       .subscribe(hero => this.hero = hero);
+  }
+
+  save(): void {
+    this.heroService.update(this.hero)
+      .then(() => this.goBack());
   }
 
   goBack(): void {
