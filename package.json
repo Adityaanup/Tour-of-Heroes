@@ -15,7 +15,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "IIT",
+  "license": "MIT",
   "dependencies": {
     "@angular/common": "~2.2.0",
     "@angular/compiler": "~2.2.0",
